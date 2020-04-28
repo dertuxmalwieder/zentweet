@@ -8,7 +8,7 @@
 
 ### PHP-Module
 
-`zentweet` braucht das OAuth-Modul für eure PHP-Version. Wenn es OAuth nicht finden kann, wird PHP euch hässliche Meldungen zeigen. Installiert es gegebenenfalls.
+`zentweet` braucht das OAuth-Modul für eure PHP-Version. Wenn es OAuth nicht finden kann, wird PHP euch hässliche Meldungen zeigen. Installiert es gegebenenfalls. Außerdem wird curl benötigt.
 
 ### Berechtigungen
 
