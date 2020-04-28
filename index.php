@@ -76,8 +76,6 @@ function dirmtime($directory) {
 
 <a href="zt"><img src="twitter-button.gif" alt="Hereinspaziert!" /></a>
 
-<div style="position:absolute;top:5px;right:5px"><a href="https://play.google.com/store/apps/details?id=net.zentweet.zentweet"><img src="google_play.png" alt="Widget dazu?" /></a></div>
-
 <br /><br />
 
 <div class="z2">Letzte &Auml;nderung: <?php setlocale(LC_TIME,"de_DE"); echo strftime("%d. %B %Y",dirmtime("./zt/.")); ?></div>
