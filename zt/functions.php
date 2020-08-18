@@ -101,6 +101,7 @@ function print_url($instring) {
 
 function make_clickable($text) {
     // t.co-Links auflösen:
+    // TODO: Das geht auch mit dem Twitter-API ("expanded_url").
     $pattern  = "~https://t.co/[A-Za-z0-9]+~";
     $text     = preg_replace_callback(
         $pattern,
