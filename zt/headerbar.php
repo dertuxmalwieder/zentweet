@@ -25,22 +25,34 @@
 <div id="extras-expanded" style="display:none">
      <div id="userfield"><span class="username">@<?php echo $_SESSION["username"]; ?></span> <a href="index.php?aktion=abmelden">(x)</a></div><div onclick="hideheaderbar();" style="cursor:pointer;width:100%;text-align:right;" title="Weniger Optionen">&#9776;</div>
 <div id="checkbar" title="Änderungen werden ab dem nächsten Tweet übernommen.">
-  <input type="checkbox" onclick="toggleavatars()" name="tgavatars" id="tgavatars" <?php if ($_SESSION["showavatars"]) echo 'checked="checked"'; ?> />
+  <input type="checkbox" onclick="toggleavatars()" name="tgavatars" id="tgavatars" <?php if ($_SESSION["showavatars"]) {
+    echo 'checked="checked"';
+} ?> />
   <label for="tgavatars"><span></span>Avatare</label>
 <br />
-  <input type="checkbox" onclick="togglenicknames()" name="tgnicknames" id="tgnicknames" <?php if ($_SESSION["shownicknames"]) echo 'checked="checked"'; ?> />
+  <input type="checkbox" onclick="togglenicknames()" name="tgnicknames" id="tgnicknames" <?php if ($_SESSION["shownicknames"]) {
+    echo 'checked="checked"';
+} ?> />
   <label for="tgnicknames"><span></span>Nicknamen</label>
 <br />
-  <input type="checkbox" onclick="togglerts()" name="tgrts" id="tgrts" <?php if ($_SESSION["showretweets"]) echo 'checked="checked"'; ?> />
+  <input type="checkbox" onclick="togglerts()" name="tgrts" id="tgrts" <?php if ($_SESSION["showretweets"]) {
+    echo 'checked="checked"';
+} ?> />
   <label for="tgrts"><span></span>Retweets</label>
 <br />
-  <input type="checkbox" onclick="togglehashtags()" name="tghashtags" id="tghashtags" <?php if ($_SESSION["showhashtags"]) echo 'checked="checked"'; ?> />
+  <input type="checkbox" onclick="togglehashtags()" name="tghashtags" id="tghashtags" <?php if ($_SESSION["showhashtags"]) {
+    echo 'checked="checked"';
+} ?> />
   <label for="tghashtags"><span></span>Hashtag-Tweets</label>
 <br />
-  <input type="checkbox" onclick="togglelinks()" name="tglinks" id="tglinks" <?php if ($_SESSION["showlinks"]) echo 'checked="checked"'; ?> />
+  <input type="checkbox" onclick="togglelinks()" name="tglinks" id="tglinks" <?php if ($_SESSION["showlinks"]) {
+    echo 'checked="checked"';
+} ?> />
   <label for="tglinks"><span></span>Link-Tweets</label>
 <br />
-  <input type="checkbox" onclick="toggle140chars()" name="tg140chars" id="tg140chars" <?php if ($_SESSION["filter140chars"]) echo 'checked="checked"'; ?> />
+  <input type="checkbox" onclick="toggle140chars()" name="tg140chars" id="tg140chars" <?php if ($_SESSION["filter140chars"]) {
+    echo 'checked="checked"';
+} ?> />
   <label for="tg140chars"><span></span>Tweets &uuml;ber 140 Zeichen verstecken</label>
 </div>
 </div>

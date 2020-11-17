@@ -16,8 +16,7 @@
 
 session_start();
 if (isset($_GET["aktion"]) && $_GET["aktion"] == "abmelden") {
-    session_destroy();
-?>
+    session_destroy(); ?>
 <!doctype html>
 <html>
 <head>
@@ -54,7 +53,9 @@ require_once("timeline.php");
 
 // An dieser Stelle haben wir alle Benutzerdaten :-)
 
-if (!isset($_SESSION["username"])) die("fuuuuuuuu! (session leer)");
+if (!isset($_SESSION["username"])) {
+    die("fuuuuuuuu! (session leer)");
+}
 
 // ---------------------------
 
@@ -70,31 +71,39 @@ if (isset($_POST["aktion"]) && $_POST["aktion"] == "holetweets") {
     }
 
     foreach ($twitter_data as $tweet) {
-        if (tweet_is_read($tweet)) continue;
+        if (tweet_is_read($tweet)) {
+            continue;
+        }
 
         // Filter: Retweets
-        if (!$_SESSION["showretweets"] && preg_match("/^RT /",$tweet["text"]))
+        if (!$_SESSION["showretweets"] && preg_match("/^RT /", $tweet["text"])) {
             continue;
+        }
 
         // Filter: Mentions
-        if (/*!$_SESSION["showmentions"] && */ preg_match("/^(\.@|@)/",$tweet["text"])) // derzeit nicht aktivierbar :P
+        if (/*!$_SESSION["showmentions"] && */ preg_match("/^(\.@|@)/", $tweet["text"])) { // derzeit nicht aktivierbar :P
             continue;
+        }
 
         // Filter: Hashtags
-        if (!$_SESSION["showhashtags"] && preg_match("/\s#.+/",$tweet["text"]))
+        if (!$_SESSION["showhashtags"] && preg_match("/\s#.+/", $tweet["text"])) {
             continue;
+        }
 
         // FIlter: Links
-        if (!$_SESSION["showlinks"] && preg_match("/http:\/\/[A-Za-z0-9]+/",$tweet["text"]))
+        if (!$_SESSION["showlinks"] && preg_match("/http:\/\/[A-Za-z0-9]+/", $tweet["text"])) {
             continue;
+        }
 
         // FIlter: Gelaber
-        if ($_SESSION["filter140chars"] && strlen($tweet["text"]) > 140)
+        if ($_SESSION["filter140chars"] && strlen($tweet["text"]) > 140) {
             continue;
+        }
 
         $divclass = "tweet";
-        if ($tweet["user"]["screen_name"] == $_SESSION["username"])
+        if ($tweet["user"]["screen_name"] == $_SESSION["username"]) {
             $divclass .= " owntweet";
+        }
 
         $retstring .= "<div class='$divclass'";
         
@@ -112,8 +121,8 @@ if (isset($_POST["aktion"]) && $_POST["aktion"] == "holetweets") {
         }
 
         $retstring .= ">";
-	$retstring .= '<span id="fav-'.$tweet["id_str"].'" class="favstar" onclick="fav('.$tweet["id_str"].')" title="Diesen Tweet favorisieren">&#10038;</span>';
-	$retstring .= make_clickable(nl2br($tweet["text"]));
+        $retstring .= '<span id="fav-'.$tweet["id_str"].'" class="favstar" onclick="fav('.$tweet["id_str"].')" title="Diesen Tweet favorisieren">&#10038;</span>';
+        $retstring .= make_clickable(nl2br($tweet["text"]));
         $retstring .= '<a id="link-'.$tweet["id_str"].'" class="link-orig" href="https://twitter.com/' . $tweet["user"]["screen_name"] . '/status/' . $tweet["id"] . '" target="_blank">[src]</a>';
         $retstring .= "</div><br />";
        
@@ -122,8 +131,7 @@ if (isset($_POST["aktion"]) && $_POST["aktion"] == "holetweets") {
 
     echo $retstring;
     return;
-}
-elseif (isset($POST["aktion"]) && $_POST["aktion"] == "userconfig") {
+} elseif (isset($POST["aktion"]) && $_POST["aktion"] == "userconfig") {
     // setze Benutzerflag "einstellung" auf "wert".
     setConfig($_POST["einstellung"], $_POST["wert"]);
 }

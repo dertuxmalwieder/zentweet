@@ -18,13 +18,18 @@
 <?php
 // Alle möglichen Timeline-Funktionen.
 
-function tweet_is_read($tweet) {
+function tweet_is_read($tweet)
+{
     // schon gelesen? dann true, sonst false!
-    return (in_array($tweet["id"],$_SESSION["readtweets"]));
+    return (in_array($tweet["id"], $_SESSION["readtweets"]));
 }
 
-function add_quotes($str) { return '"'.$str.'"'; }
-function fetch_tweets() {
+function add_quotes($str)
+{
+    return '"'.$str.'"';
+}
+function fetch_tweets()
+{
     global $consumer_key, $consumer_secret;
 
     // Rückgabe: Array mit den Tweets (JSON)
@@ -76,7 +81,7 @@ function fetch_tweets() {
     // this time we're using a normal GET query, and we're only encoding the query params
     // (without the oauth params)
     $url .= "?".http_build_query($query);
-    $url = str_replace("&amp;","&",$url); //Patch by @Frewuill
+    $url = str_replace("&amp;", "&", $url); //Patch by @Frewuill
 
     $oauth['oauth_signature'] = $signature; // don't want to abandon all that work!
     ksort($oauth); // probably not necessary, but twitter's demo does it
@@ -102,7 +107,7 @@ function fetch_tweets() {
     $json = curl_exec($feed);
     curl_close($feed);
 
-    $twitter_data = json_decode($json,1);
+    $twitter_data = json_decode($json, 1);
     return $twitter_data;
 }
 ?>
