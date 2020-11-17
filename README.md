@@ -16,4 +16,4 @@
 
 ## Lizenz
 
-*zentweet* steht unter der [ABRMS](https://raw.githubusercontent.com/landondyer/kasm/master/LICENSE)-Lizenz.
+*zentweet* steht unter der CDDL 1.0 (siehe Datei `LICENSE`).
