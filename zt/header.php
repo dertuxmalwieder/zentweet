@@ -23,7 +23,7 @@
 <link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
 <link rel="stylesheet" type="text/css" href="css/tooltipster-follower.min.css" />
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/jquery-3.5.1.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="js/jquery.tooltipster.min.js"></script>
 <script type="text/javascript" src="js/tooltipster-follower.min.js"></script>
 <script src="js/zentweet.js" type="text/javascript"></script>

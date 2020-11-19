@@ -13,9 +13,7 @@
  * file and include the contents of the LICENSE file from this
  * distribution.
  */
- ?>
- 
- <?php
+
 // Alles, was noch fehlt... nützliche Hilfsfunktionen und dergleichen.
 
 function readOrCreateConfig($username)

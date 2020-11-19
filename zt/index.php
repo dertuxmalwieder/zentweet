@@ -46,7 +46,6 @@ Danke, dass ihr hier wart.
 <?php
     exit;
 }
-
 require_once("functions.php");
 require_once("userlogin.php");
 require_once("timeline.php");
