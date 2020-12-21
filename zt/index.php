@@ -85,11 +85,11 @@ if (isset($_POST["aktion"]) && $_POST["aktion"] == "holetweets") {
         }
 
         // Filter: Hashtags
-        if (!$_SESSION["showhashtags"] && preg_match("/\s#.+/", $tweet["text"])) {
+        if (!$_SESSION["showhashtags"] && preg_match("/[^\S]#.+/", $tweet["text"])) {
             continue;
         }
 
-        // FIlter: Links
+        // Filter: Links
         if (!$_SESSION["showlinks"] && preg_match("/http:\/\/[A-Za-z0-9]+/", $tweet["text"])) {
             continue;
         }

@@ -2,6 +2,11 @@ function toggleavatars() {
     setConfig("showavatars",(document.getElementById("tgavatars").checked == true) ? 1 : 0);
 }
 
+function togglegrid() {
+    setConfig("showgrid",(document.getElementById("tggrid").checked == true) ? 1 : 0);
+    $("#timeline").toggleClass("grid");
+}
+
 function togglenicknames() {
     setConfig("shownicknames",(document.getElementById("tgnicknames").checked == true) ? 1 : 0);
 }

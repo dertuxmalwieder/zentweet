@@ -30,6 +30,11 @@
 } ?> />
   <label for="tgavatars"><span></span>Avatare</label>
 <br />
+  <input type="checkbox" onclick="togglegrid()" name="tggrid" id="tggrid" <?php if ($_SESSION["showgrid"]) {
+    echo 'checked="checked"';
+} ?> />
+  <label for="tggrid"><span></span>Als Gitter anzeigen</label>
+<br />
   <input type="checkbox" onclick="togglenicknames()" name="tgnicknames" id="tgnicknames" <?php if ($_SESSION["shownicknames"]) {
     echo 'checked="checked"';
 } ?> />
