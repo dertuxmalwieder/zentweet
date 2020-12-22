@@ -3,8 +3,13 @@ function toggleavatars() {
 }
 
 function togglegrid() {
-    setConfig("showgrid",(document.getElementById("tggrid").checked == true) ? 1 : 0);
-    $("#timeline").toggleClass("grid");
+    let isgrid = (document.getElementById("tggrid").checked == true);
+    setConfig("showgrid", isgrid ? 1 : 0);
+    if (isgrid) {
+        $("#timeline").addClass("grid");
+    } else {
+        $("#timeline").removeClass("grid");
+    }
 }
 
 function togglenicknames() {

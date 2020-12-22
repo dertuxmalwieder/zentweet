@@ -144,7 +144,7 @@ include("header.php");
 ?>
 
 <div id='timelinewrapper'>
-<div id='timeline'>
+<div id='timeline'<?php if ($_SESSION["showgrid"]) { ?> class='grid'<?php } ?>>
 <noscript>
 <div class="tweet">Kein JavaScript? Keine Tweets!</div>
 </noscript>

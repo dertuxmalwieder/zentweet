@@ -24,6 +24,7 @@ function readOrCreateConfig($username)
         $vars = array();
         $vars["showavatars"] = false;
         $vars["showretweets"] = false;
+        $vars["showgrid"] = false;
         $vars["shownicknames"] = false;
         $vars["showhashtags"] = false;
         $vars["showlinks"] = false;
@@ -41,6 +42,7 @@ function readOrCreateConfig($username)
 
     $_SESSION["showavatars"] = $json["showavatars"];
     $_SESSION["showretweets"] = $json["showretweets"];
+    $_SESSION["showgrid"] = (isset($json["showgrid"]) ? $json["showgrid"] : 0);
     $_SESSION["shownicknames"] = $json["shownicknames"];
     $_SESSION["showhashtags"] = (isset($json["showhashtags"]) ? $json["showhashtags"] : 0);
     $_SESSION["showlinks"] = (isset($json["showlinks"]) ? $json["showlinks"] : 1);
