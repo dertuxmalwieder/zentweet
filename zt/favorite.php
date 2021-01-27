@@ -13,9 +13,7 @@
  * file and include the contents of the LICENSE file from this
  * distribution.
  */
- ?>
- 
- <?php
+
   // Diese Datei nur per AJAX aufrufen :-)
   // Sie favorisiert den Tweet <ID>.
 
