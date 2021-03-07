@@ -47,7 +47,7 @@ function readOrCreateConfig($username)
     $_SESSION["showhashtags"] = (isset($json["showhashtags"]) ? $json["showhashtags"] : 0);
     $_SESSION["showlinks"] = (isset($json["showlinks"]) ? $json["showlinks"] : 1);
     $_SESSION["readtweets"] = $json["readtweets"];
-    $_SESSION["filter140chars"] = $json["filter140chars"];
+    $_SESSION["filter140chars"] = (isset($json["filter140chars"]) ? $json["filter140chars"] : false);
 }
 
 function setConfig($key, $value)
